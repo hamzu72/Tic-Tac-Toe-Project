@@ -1,0 +1,140 @@
+/* General Body and Font Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* Main container for the game elements */
+main.background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+/* Game Board Styling */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cell:hover {
+    background-color: #e8e8e8;
+    transform: translateY(-2px);
+}
+
+/* Styling for X and O */
+.cell.x {
+    color: #3498db; /* Blue for X */
+}
+
+.cell.o {
+    color: #e74c3c; /* Red for O */
+}
+
+/* Highlight winning cells */
+.cell.win {
+    background-color: #2ecc71; /* Green for winning cells */
+    color: white;
+}
+
+/* Game Status Text Styling */
+.status-section {
+    min-height: 50px;
+}
+
+.status-text {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Reset Button Styling */
+.reset-btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+    color: white;
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+}
+
+.reset-btn:hover {
+    background: linear-gradient(45deg, #2980b9, #3498db);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.reset-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+        gap: 8px;
+    }
+
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+        border-radius: 8px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .status-text {
+        font-size: 1.2rem;
+    }
+
+    .reset-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
